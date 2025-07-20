@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <link rel="stylesheet" type="text/css" href="styles.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  </head>
+  <body>
+    <div  id="container">
+      <div id="left">
+        <div id="menu">
+          <a href="">Home</a> 
+          <a href="">Blog</a>
+        </div>
+        
+        <div id="dropdownContainer">
+          <div id="dropdown">
+            <span >Document Converters</span>
+              <div id="dropdownItems">
+                <button onclick="UploadToType(this)">DOC</button>
+                <button onclick="UploadToType(this)">DOCM</button>
+                <button onclick="UploadToType(this)">DOCX</button>
+                <button onclick="UploadToType(this)">HTML</button>
+                <button onclick="UploadToType(this)">PDF</button>
+                <button onclick="UploadToType(this)">TXT</button>
+              </div>
+          </div>
+          <div id="dropdown">
+            <span >Image Converters</span></div>
+          <div id="dropdown">
+            <span >Audio Converters</span></div>
+          <div id="dropdown">
+            <span >Text Converters</span></div>
+        </div>
+      
+        <div id="output">
+
+          <div id="inputBox">
+            <input type="file" id="FileInput">
+            <img src="../images/uploadIMG.png" id="uploadBtn">
+            <span id="FileName">No File Chosen</span>
+          </div>
+        
+        </div>
+      </div>
+
+      <div id="right">
+        <button id="ConvertFrom"></button>
+        <span>------</span>
+        <button id="ConvertTo"></button>
+        <button id="ConvertBtn">Convert</button>
+      </div>
+    </div>
+
+    <div id="bottom"></div>
+    <footer>
+      <p>© 2025 FileFlexer | All Rights Reserved</p>
+    </footer>
+    <script type="text/javascript" src="../scripts/uploadScript.js"></script>
+    <script type="text/javascript" src="../scripts/submitFile.js"></script>
+  </body>
+</html>
