@@ -1,7 +1,12 @@
+/*
+    ConversionPairs stores the different types of possible conversions
+*/
 
 document.getElementById("ConvertBtn").addEventListener("submit",SubmitFile());
 
 let InputFileType=""; 
+let OutputFileType="";
+
 path="/api/SubmitFile";
 
 async function SubmitFile(){
@@ -30,11 +35,22 @@ async function SubmitFile(){
         }
 }
 const ConvertFromButton=document.getElementById("ConvertFrom");
+const conversionPairs=[]
 
 function UploadToType(e){
     InputFileType= e.innerText;
     ConvertFromButton.innerText=e.innerText;
+    //hhere we need to submit the file type and whethere its Document/audiuo/image
+    //a puython endppoint will generate the list for the given document types and send it to conversionPairs
+    //conveesionpairs will update the #right . dropdownItems innerhtml 
 }
 
+function UploadToType(e){
+    OutputFileType= e.innerText;
+    ConvertFromButton.innerText=e.innerText;
+    //hhere we need to submit the file type and whethere its Document/audiuo/image
+    //a puython endppoint will generate the list for the given document types and send it to conversionPairs
+    //conveesionpairs will update the #right . dropdownItems innerhtml 
+}
 
 

@@ -36,52 +36,86 @@
     justify-content: center;
     margin-top: 150px;
 }
+#ConvertTo::after{
+    content: '\02C5';
+}
+
 #ConvertFrom{
-    font-size: 2.4vw;
+    font-size: 2.3vw;
     padding: 5px;
     font-style: italic;
     cursor: pointer;
-    width: 35%;
+    width: 30%;
     height: 10%;
     overflow: hidden;
     justify-content: center;
     margin-top: 150px;
+    border-radius: 10px;
 }
 #ConvertTo{
-    font-size: 2.4vw;
+    font-size: 2.3vw;
     padding: 5px;
-    width: 35%;
-    height: 10%;
-    margin-top: 150px;
+    width: 100%;
+    height: 100%;
     font-style: italic;
     cursor: pointer;
     overflow: hidden;
+    border-radius: 10px;
+    justify-content: center;
+}
+#right .dropdown {
+    display: flex;
+    width: 30%;
+    height: 10%;
+    justify-content: center;
+    margin-top: 145px;
 }
 
-#dropdown{
-    display: inline-block;
+.dropdown{
+    position: relative;
     border-radius: 10px; 
     padding: 5px;
+    height: 5vh;
+    width: 15vw;
 }
-#dropdownItems{
-    position: absolute;
-    width: 400px;
-    height: 250px;
+#dropdownContainer span{
+    font-size: 80%;
+}
+.dropdownItems{
+    position: relative;
+    display: flex;
+    flex-wrap: wrap;
     background-color: rgb(168, 167, 167);
-    top: 34px;
+    top: 15px;
     border-radius: 10px;
-    left: 0;
     box-shadow: 0px 2px 5px 0px black;
     opacity: 0;
     transition: opacity 250ms ease-in-out;
     pointer-events: none;
+    padding: 5px 5px 5px 5px;
+    gap: 5px;
+    
 }
 
-#dropdown:hover #dropdownItems{
+.dropdownItems button{
+    font-size: 80%;
+    text-align: center;
+    padding: 10px;
+    flex: 1 1 auto;
+    border-radius: 5px;
+    width: 25%;
+}
+#left .dropdownItems{
+    width: fit-content;
+    margin-left: -55px;
+    height: fit-content;
+}
+
+.dropdown:hover .dropdownItems{
     opacity: 1;
     pointer-events: auto;
 }
-#dropdown:hover span::after{
+.dropdown:hover span::after{
     content: '\02C5' ;
     padding-left: 10px;
 }
@@ -95,6 +129,7 @@
     margin: auto;
     position: relative;
 }
+
 #dropdownContainer span{
     font-size: 20px;
     
@@ -169,11 +204,11 @@ footer{
     font-style: italic;
     margin-top: 18px;
 }
-#dropdown:hover{
+.dropdown:hover{
     background-color:rgb(255, 246, 243) ;
     
 }
-#dropdown span::after{
+.dropdown span::after{
     content: '\02C4' ;
     padding-left: 10px;
 } 
@@ -181,25 +216,19 @@ footer{
 
 #ConvertBtn{
     display: flex;
-    font-size: 3.2vw;
-    
+    font-size: 2.5vw;
     font-style: italic;
     cursor: pointer;
     width: 50%;
-    flex-wrap: wrap;
+    
     height: 10%;
     margin: auto;
     justify-content: center;
+    border-radius: 10px;
 }
 
 
 
-#dropdownItems button{
-    font-size: 20px;
-    padding: 10px;
-    width:30%;
-    margin:5px 5px 5px 5px;
-    border-radius: 5px;
-}
+
 
 

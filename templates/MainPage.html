@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    <link rel="stylesheet" type="text/css" href="styles.css">
+    <link rel="stylesheet" type="text/css" href="../static/css/styles.css">
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
   </head>
@@ -14,30 +14,38 @@
         </div>
         
         <div id="dropdownContainer">
-          <div id="dropdown">
+          <div class="dropdown">
             <span >Document Converters</span>
-              <div id="dropdownItems">
-                <button onclick="UploadToType(this)">DOC</button>
-                <button onclick="UploadToType(this)">DOCM</button>
-                <button onclick="UploadToType(this)">DOCX</button>
-                <button onclick="UploadToType(this)">HTML</button>
-                <button onclick="UploadToType(this)">PDF</button>
-                <button onclick="UploadToType(this)">TXT</button>
+              <div class="dropdownItems" id="document">
+
               </div>
           </div>
-          <div id="dropdown">
-            <span >Image Converters</span></div>
-          <div id="dropdown">
-            <span >Audio Converters</span></div>
-          <div id="dropdown">
-            <span >Text Converters</span></div>
+
+          <div class="dropdown">
+            <span >Image Converters</span>
+              <div class="dropdownItems" id="image">
+
+              </div>
+          </div>
+          <div class="dropdown">
+            <span >Music Converters</span>
+              <div class="dropdownItems" id="music">
+
+              </div>
+          </div>
+          <div class="dropdown">
+            <span >Video Converters</span>
+              <div class="dropdownItems" id="Video">
+
+              </div>
+          </div>
         </div>
       
         <div id="output">
 
           <div id="inputBox">
             <input type="file" id="FileInput">
-            <img src="../images/uploadIMG.png" id="uploadBtn">
+            <img src="../static/images/uploadIMG.png" id="uploadBtn">
             <span id="FileName">No File Chosen</span>
           </div>
         
@@ -46,17 +54,33 @@
 
       <div id="right">
         <button id="ConvertFrom"></button>
-        <span>------</span>
-        <button id="ConvertTo"></button>
+          <div class="dropdown">
+            <div></div>
+            <button id="ConvertTo">...</button>
+              <div class="dropdownItems">
+                <button onclick="SetConversionType(this)"></button>
+                <button onclick="SetConversionType(this)"></button>
+                <button onclick="SetConversionType(this)"></button>
+                <button onclick="SetConversionType(this)"></button>
+                <button onclick="SetConversionType(this)"></button>
+                <button onclick="SetConversionType(this)"></button>
+              </div>
+          </div>
         <button id="ConvertBtn">Convert</button>
+        <div id="downloadFile"><a href="#">download here!</a></div>
       </div>
+      
     </div>
 
-    <div id="bottom"></div>
+
+      
+
     <footer>
       <p>© 2025 FileFlexer | All Rights Reserved</p>
     </footer>
-    <script type="text/javascript" src="../scripts/uploadScript.js"></script>
-    <script type="text/javascript" src="../scripts/submitFile.js"></script>
+    <script type="text/javascript" src="../static/scripts/DropdownGenerates.js"></script>
+    <script type="text/javascript" src="../static/scripts/uploadScript.js"></script>
+    <script type="text/javascript" src="../static/scripts/submitFile.js"></script>
+    
   </body>
 </html>
