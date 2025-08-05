@@ -3,6 +3,7 @@ const UploadBtn=document.getElementById('uploadBtn');
 const Input=document.getElementById('FileInput');
 const Filename=document.getElementById('FileName');
 const Right= document.getElementById('right');
+const ConvertFromButton=document.getElementById('ConvertFrom');
 
 InputArea.addEventListener('click', function(){
     Input.click();

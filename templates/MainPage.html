@@ -14,28 +14,27 @@
         </div>
         
         <div id="dropdownContainer">
-          <div class="dropdown">
+          <div class="dropdown" data-isInitialised>
             <span >Document Converters</span>
               <div class="dropdownItems" id="document">
-
               </div>
           </div>
 
-          <div class="dropdown">
+          <div class="dropdown" data-isInitialised>
             <span >Image Converters</span>
               <div class="dropdownItems" id="image">
 
               </div>
           </div>
-          <div class="dropdown">
+          <div class="dropdown" data-isInitialised>
             <span >Music Converters</span>
               <div class="dropdownItems" id="music">
 
               </div>
           </div>
-          <div class="dropdown">
+          <div class="dropdown" data-isInitialised>
             <span >Video Converters</span>
-              <div class="dropdownItems" id="Video">
+              <div class="dropdownItems" id="video">
 
               </div>
           </div>
@@ -55,17 +54,12 @@
       <div id="right">
         <button id="ConvertFrom"></button>
           <div class="dropdown">
-            <div></div>
             <button id="ConvertTo">...</button>
-              <div class="dropdownItems">
-                <button onclick="SetConversionType(this)"></button>
-                <button onclick="SetConversionType(this)"></button>
-                <button onclick="SetConversionType(this)"></button>
-                <button onclick="SetConversionType(this)"></button>
-                <button onclick="SetConversionType(this)"></button>
-                <button onclick="SetConversionType(this)"></button>
+              <div >
+
               </div>
           </div>
+          
         <button id="ConvertBtn">Convert</button>
         <div id="downloadFile"><a href="#">download here!</a></div>
       </div>
