@@ -18,20 +18,26 @@ async function SubmitFile(){
             const formData=new formData();
             formData.append("file", Input);
             formData.append("inputFileType",Filename);
-            //--------------------------TO DO ---------------------------//
-            /*
-            const response= await fetch({path,
-                method: "POST",
-                body:formData
-            });
+
+            job = cloudconvert.Job.create(payload={
+                "tasks": {
+                    'import-my-file': {
+                        'operation': 'import/url',
+                        'url': 'https://my.url/file.docx'
+                    },
+                    'convert-my-file': {
+                        'operation': 'convert',
+                        'input': 'import-my-file',
+                        'input_format': 'docx',
+                        'output_format': 'pdf'
+                    },
+                    'export-my-file': {
+                        'operation': 'export/url',
+                        'input': 'convert-my-file'
+                    }
+                }
+            })
             
-            
-            const result = await response.blob();
-            if result: //successful hold response in vaar and open the downlaod in a new route 
-                pass;
-            else:
-                alert(result.message);
-            */
         }
 }
 
