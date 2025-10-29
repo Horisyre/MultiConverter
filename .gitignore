@@ -2,3 +2,11 @@
 .clj-kondo/.cache/v1/lock
 config.py
 .lsp/.cache/db.transit.json
+.MineP.env
+.vscode
+__pycache__
+config/launch.json
+config/launch.json
+tempCodeRunnerFile.py
+config/launch.json
+config/launch.json

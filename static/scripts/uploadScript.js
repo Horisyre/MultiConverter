@@ -4,9 +4,6 @@ const Input=document.getElementById('FileInput');
 const Filename=document.getElementById('FileName');
 const Right= document.getElementById('right');
 
-InputArea.addEventListener('click', function(){
-    Input.click();
-} );
 
 UploadBtn.addEventListener('click', function(){
     Input.click();
