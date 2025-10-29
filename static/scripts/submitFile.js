@@ -1,44 +1,42 @@
-/*
-    ConversionPairs stores the different types of possible conversions
-*/
+document.getElementById("ConvertBtn").addEventListener("click",SubmitFile);
 
-document.getElementById("ConvertBtn").addEventListener("submit",SubmitFile());
 
-let InputFileType=""; 
-let OutputFileType="";
+
+const ConvertFrom=document.getElementById("ConvertFrom");
 
 path="/api/SubmitFile";
+const OutputFileType = ConvertFrom.textContent.slice(ConvertFrom.textContent.lastIndexOf(":") + 2);
+
 
 async function SubmitFile(){
     //validate name info and return early if condititions not met
+    const fileName = Input.files[0].name;
+    const InputFileType = fileName.slice(fileName.lastIndexOf("."))
     if (Filename.textContent == "No File Chosen"){
         return;
         }else{
             //send to backend, using fetch()
-            const formData=new formData();
-            formData.append("file", Input);
-            formData.append("inputFileType",Filename);
-
-            job = cloudconvert.Job.create(payload={
-                "tasks": {
-                    'import-my-file': {
-                        'operation': 'import/url',
-                        'url': 'https://my.url/file.docx'
-                    },
-                    'convert-my-file': {
-                        'operation': 'convert',
-                        'input': 'import-my-file',
-                        'input_format': 'docx',
-                        'output_format': 'pdf'
-                    },
-                    'export-my-file': {
-                        'operation': 'export/url',
-                        'input': 'convert-my-file'
+            const formData=new FormData();
+            formData.append("file", Input.files[0]);
+            formData.append("inputFileType",InputFileType);
+            formData.append("OutputFileType",OutputFileType)
+                try {
+                    const response = await fetch(path, {
+                        method: "POST",
+                        body: formData
+                    });
+                    const result = await response.json();
+                    if (result.download_url) {
+                        // MIGHT LOOK LIKE---->{ "status": "success", "download_url": "/downloads/output.pdf" }
+                        console.log("Server response:", result);
+                        document.getElementById("downloadFile").href = result.download_url;
+                    } else {
+                        console.error("Server error:", response.status);
                     }
+                } catch (error) {
+                    console.error("Error sending file:", error);
                 }
-            })
-            
-        }
+            }
 }
 
 const conversionPairs=[]

@@ -4,10 +4,11 @@ document.querySelectorAll('.dropdown').forEach(dropdown=>{dropdown.addEventListe
     }
     });
 });
-const ConvertFromButton=document.getElementById("ConvertFrom");
+
+
 function UploadToType(e){
     const button=e.target;
-    ConvertFromButton.textContent=button.textContent;
+    ConvertFrom.textContent="Converting to file format type: "+ button.textContent;
 }//then define a callback function, if the response was ok take the buttons text content and apply it to the possible dropdown options for the convert to button dropwn(left dropdown)
 
 // IF THE BOOLEAN FUNCTION IS TRUE  WE WILL NOT RUN THIS FUNCTION AGAIN
@@ -27,3 +28,23 @@ function generateList(e){
             });
         });
 };
+
+document.querySelectorAll('.dropdown').forEach(dropdown => {
+    let timeoutId;//each dropdown has its own independent timer
+
+    dropdown.addEventListener("mouseenter", () => {
+        // Show this dropdown immediately
+        dropdown.classList.add('keep-visible');
+
+        // Clear any previous hide timer
+        if (timeoutId) clearTimeout(timeoutId);
+    });
+
+    dropdown.addEventListener("mouseleave", () => {
+        // Hide this dropdown after 15 seconds
+        timeoutId = setTimeout(() => {
+            dropdown.classList.remove('keep-visible');
+        }, 300);
+    });
+});
+
