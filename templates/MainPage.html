@@ -1,77 +1,119 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <link rel="stylesheet" type="text/css" href="../static/css/styles.css">
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  </head>
-  <body>
-    <div  id="container">
-      <div id="left">
-        <div id="menu">
-          <a href="">Home</a> 
-          <a href="">Blog</a>
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>FileFlexer - Universal File Converter</title>
+  <link rel="stylesheet" type="text/css" href="../static/css/styles.css">
+  <link rel="stylesheet" type="text/css" href="../static/css/mainpage.css">
+  <link rel="stylesheet" type="text/css" href="../static/css/dropdown-mainpage.css">
+</head>
+<body>
+  <header class="navbar">
+    <div class="navbar-content">
+      <div class="logo">
+        <span class="logo-icon">⚡</span>
+        <h1>FileFlexer</h1>
+      </div>
+      <nav class="menu">
+        <a href="#" class="nav-link">Home</a>
+        <a href="#" class="nav-link">Blog</a>
+        <a href="#" class="nav-link">About</a>
+      </nav>
+    </div>
+  </header>
+
+  <main id="container">
+    <section id="left">
+      <div class="hero">
+        <h2>Convert Your Files Instantly</h2>
+        <p>Fast, secure, and effortless file conversion across documents, images, music, and video</p>
+      </div>
+
+      <div class="converters-grid">
+        <div class="converter-section">
+          <h3 class="section-title">📄 Document Converters</h3>
+          <div class="dropdown" data-isInitialise>
+            <span>Select Document Format</span>
+            <div class="dropdownItems" id="document"></div>
+          </div>
         </div>
-        
-        <div id="dropdownContainer">
-          <div class="dropdown" data-isInitialised>
-            <span >Document Converters</span>
-              <div class="dropdownItems" id="document">
-              </div>
-          </div>
 
+        <div class="converter-section">
+          <h3 class="section-title">🖼️ Image Converters</h3>
           <div class="dropdown" data-isInitialised>
-            <span >Image Converters</span>
-              <div class="dropdownItems" id="image">
-
-              </div>
-          </div>
-          <div class="dropdown" data-isInitialised>
-            <span >Music Converters</span>
-              <div class="dropdownItems" id="music">
-
-              </div>
-          </div>
-          <div class="dropdown" data-isInitialised>
-            <span >Video Converters</span>
-              <div class="dropdownItems" id="video">
-
-              </div>
+            <span>Select Image Format</span>
+            <div class="dropdownItems" id="image"></div>
           </div>
         </div>
-      
-        <div id="output">
 
+        <div class="converter-section">
+          <h3 class="section-title">🎵 Music Converters</h3>
+          <div class="dropdown" data-isInitialised>
+            <span>Select Audio Format</span>
+            <div class="dropdownItems" id="music"></div>
+          </div>
+        </div>
+
+        <div class="converter-section">
+          <h3 class="section-title">🎬 Video Converters</h3>
+          <div class="dropdown" data-isInitialised>
+            <span>Select Video Format</span>
+            <div class="dropdownItems" id="video"></div>
+          </div>
+        </div>
+      </div>
+
+      <div id="output">
+        <div class="upload-card">
           <div id="inputBox">
             <input type="file" id="FileInput">
-            <img src="../static/images/uploadIMG.png" id="uploadBtn">
-            <span id="FileName">No File Chosen</span>
+            <div class="upload-icon">📤</div>
+            <h3>Drag & Drop Your File Here</h3>
+            <p>or click to browse</p>
+            <span id="FileName" class="file-badge">No File Chosen</span>
           </div>
-        
         </div>
       </div>
+    </section>
 
-      <div id="right">
-        <div >
-          <span id="inputError"> </span>
-        </div><!-- show by defualt, if drubdown item is pressed hide this -->
-        <span id="ConvertFrom">Select a format</span> <!-- /hide till a dropdownitems pressed-->
+    <aside id="right">
+      <div class="sidebar-card">
+        <div class="status-indicator">
+          <span id="inputError"></span>
+        </div>
         
-        <button id="ConvertBtn">Convert</button>
-        <div id="downloadFile"><a href="#">download here!</a></div> <!-- //hide till we get a response -->
+        <div class="conversion-info">
+          <p class="info-label">Converting to:</p>
+          <span id="ConvertFrom" class="format-badge">Select a format</span>
+        </div>
+
+        <button id="ConvertBtn" class="convert-button">
+          <span>🚀</span> Convert Now
+        </button>
+
+        <div id="downloadFile" class="download-section">
+          <a href="#" class="download-link">
+            <span>⬇️</span> Click here if not re-directed
+          </a>
+        </div>
+
+        <div class="progress-container" >
+          <div class="progress-bar">
+            <div class="progress-fill"></div>
+          </div>
+          <p class="progress-text">Converting...</p>
+        </div>
       </div>
-      
-    </div>
+    </aside>
+  </main>
 
+  <footer>
+    <p>© 2025 FileFlexer | All Rights Reserved | Made with ⚡ for fast conversions</p>
+  </footer>
 
-      
-
-    <footer>
-      <p>© 2025 FileFlexer | All Rights Reserved</p>
-    </footer>
-    <script type="text/javascript" src="../static/scripts/DropdownGenerates.js"></script>
-    <script type="text/javascript" src="../static/scripts/uploadScript.js"></script>
-    <script type="text/javascript" src="../static/scripts/submitFile.js"></script>
-    
-  </body>
+  <script type="text/javascript" src="../static/scripts/DropdownGenerates.js"></script>
+  <script type="text/javascript" src="../static/scripts/uploadScript.js"></script>
+  <script type="text/javascript" src="../static/scripts/submitFile.js"></script>
+</body>
 </html>
