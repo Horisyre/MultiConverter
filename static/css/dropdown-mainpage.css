@@ -1,0 +1,88 @@
+.dropdown {
+    position: relative;
+    z-index: 1000;
+    height: 44px;
+    width: 100%;
+    padding: 0 16px;
+    border-radius: var(--radius-sm);
+    background: var(--panel);
+    border: 1.5px solid rgba(0, 0, 0, 0.06);
+    display: inline-flex;
+    align-items: center;
+    cursor: pointer;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.04);
+    transition: all var(--transition);
+    font-weight: 500;
+    color: var(--muted);
+}
+
+.dropdown:hover {
+    transform: translateY(-2px);
+    box-shadow: var(--shadow);
+    border-color: var(--accent-light);
+    background: linear-gradient(135deg, #fafbfc 0%, #f5f7fa 100%);
+}
+
+.dropdown span {
+    display: inline-block;
+    width: 100%;
+    text-overflow: ellipsis;
+    overflow: hidden;
+    white-space: nowrap;
+    font-size: 0.95rem;
+}
+
+
+.dropdownItems {
+    position: absolute;
+    top: calc(100% + 8px);
+    left: 0;
+    right: 0;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    padding: 12px;
+    background-color: var(--panel);
+    border: 1px solid rgba(0, 0, 0, 0.06);
+    border-radius: var(--radius-sm);
+    box-shadow: var(--shadow-lg);
+    opacity: 0;
+    pointer-events: none;
+    transform-origin: top;
+    transform: translateY(-8px) scale(0.98);
+    transition: all 200ms var(--transition);
+    z-index: 1300;
+}
+
+.dropdown:hover .dropdownItems,
+.dropdown.keep-visible .dropdownItems {
+    opacity: 1;
+    pointer-events: auto;
+    transform: translateY(0) scale(1);
+}
+
+.dropdownItems button {
+    font-size: 0.9rem;
+    padding: 8px 14px;
+    border-radius: var(--radius-sm);
+    border: 1px solid rgba(0, 0, 0, 0.06);
+    background: var(--panel);
+    cursor: pointer;
+    box-shadow: 0 1px 4px rgba(0, 0, 0, 0.02);
+    transition: all var(--transition);
+    font-weight: 500;
+    white-space: nowrap;
+}
+
+.dropdownItems button:hover {
+    background: var(--accent-light);
+    color: var(--accent-dark);
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(59, 130, 246, 0.12);
+    border-color: var(--accent);
+}
+
+
+.dropdown.keep-visible {
+    z-index: 1400;
+}

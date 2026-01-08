@@ -10,3 +10,4 @@ config/launch.json
 tempCodeRunnerFile.py
 config/launch.json
 config/launch.json
+*.env
